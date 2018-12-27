@@ -3,6 +3,7 @@ Install
 npm install --save translate-components
 How to use
 //index.js
+```
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -16,8 +17,9 @@ ReactDOM.render(
   </TranslateProvider>,
   document.getElementById('root')
 );
+```
 Wrap your application with TranslateProvider, pass the translations and the default language of your application.
-
+```
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -52,10 +54,11 @@ class App extends Component {
 }
 
 export default App;
+```
 Use Translate component to wrap the text you want to translate. Use reactTranslateChangeLanguage to change the language of your application. Pass to reactTranslateChangeLanguage function, as first argument, the language. This translate instantly your application!
 
 Of course, you need to have a translation JSON file to pass it to TranslateProvider like this:
-
+```
 {
   "Welcome to React": {
     "es": "Bienvenido a React",
@@ -70,10 +73,12 @@ Of course, you need to have a translation JSON file to pass it to TranslateProvi
     "de": "und speichern, um neu zu laden"
   }
 }
+```
 By default the Translate component wraps the tranlated text into a <span> element. Additionally, you can use the prop useRawText from the Translate component to render the tranlated text with no wrapping. This will be useful to render the text in elements that don't support nested <span> as well as for other user cases like placeholders in <input> elements. E.g.
-
+```
 <select className="selectClass">
   <option value="phone"><Translate useRawText={true}>Phone</Translate></option>
   <option value="email"><Translate useRawText={true}>Email</Translate></option>
   <option value="textMessage"><Translate useRawText={true}>Text Message</Translate></option>
 </select>
+```
