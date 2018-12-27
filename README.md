@@ -1,0 +1,1 @@
+# react-translate-components-example
